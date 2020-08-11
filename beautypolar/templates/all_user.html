@@ -1,0 +1,41 @@
+{%include 'navbar.html'%}
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+     <div class="container " style="margin-top: 30px;">
+    <h2 class="text-center " style="text-transform: uppercase; font-size: 30px; font-weight: bold;"> View User </h2>
+    <br>
+<table class="table"  id="example" >
+  <thead style="color: black">
+    <tr>
+      <th scope="col">Image</th>
+      <th scope="col">Name</th>
+      <th scope="col">ID</th>
+      <th scope="col">Contact</th>
+      <th scope="col">Email Id</th>
+      <th scope="col">Gender</th>
+      <th scope="col">Status</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for views in user %}
+    <tr>
+      <th scope="row">{{views.image}}</th>
+      <td>{{views.name}}</td>
+      <td>{{views.id}}</td>
+      <td>{{views.contact}}</td>
+      <td>{{views.email}}</td>
+      <td>{{views.gender}}</td>
+      <td>{{views.status}}</td>
+      <td><a href="{%url 'remove_allUser' views.id %}" onclick="return confirm(' Are You Sure? You want to Remove this Record from DataBase')" class="btn btn-danger">Remove</a></td>
+    </tr>
+    {%endfor%}
+  </tbody>
+</table>
+  </div>
+</body>
+</html>

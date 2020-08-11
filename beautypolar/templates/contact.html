@@ -1,0 +1,46 @@
+{%include 'navbar.html' %}
+{%load static%}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="{%static 'js/map.js' %}"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY&callback=myMap"></script>
+    <title>Contact Us</title>
+    <style>
+   .tdstyle{
+    background-image: url("{% static 'img/con.jpg' %}");
+    height: 100vh;
+    background-repeat: no-repeat;
+
+/*    opacity: 0.7
+*/   }
+    </style>
+</head>
+<body>
+
+   <div class="setting tdstyle">
+   <div class="side_text">
+
+<!--     <div id="googleMap1" style="width:400px;height:300px;"></div>
+ -->
+     <h4 style="margin-top: 70px; ">Name:</h4>
+      <p>Sadia Beauty Polor</p>
+
+    <h4 style="margin-top: 10px; ">Email:</h4>
+      <p>alialtaf1998@gmail.com</p>
+
+    <h4 style="margin-top: 10px">Contact/Whatsapp:</h4>
+      <p>03228434669</p>
+
+     <h4 style="margin-top: 10px; ">Address:</h4>
+      <p>Main Branch in Mughalpura Lahore St#15 H#1 Postel Code : 54000</p>
+
+
+   </div>
+
+   </div>
+
+
+</body>
+</html>

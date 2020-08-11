@@ -1,0 +1,92 @@
+{%include 'navbar.html' %}
+{%load static%}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="{%static 'js/login.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+    <title>Login</title>
+   <style>
+   .back{
+    background-image: url("{% static 'img/login.jpg' %}");
+    height: 100vh;
+    background-repeat: no-repeat;
+/*    opacity: 0.7
+*/   }
+    </style>
+     {% ifequal error_message "yes" %}
+    <script>
+      swal("Good job!", "Login Successfully", "success");
+    </script>
+    {%endifequal%}
+
+    {% ifequal error_message "notaccept" %}
+    <script>
+      alert("Request pending Wait for Admin approvel")
+    </script>
+    {%endifequal%}
+
+    {% ifequal error_message "no" %}
+    <script>
+      alert("No login")
+    </script>
+    {%endifequal%}
+</head>
+<body>
+
+  <div class="back">
+      <div class="container" style="float: right; width: 40%">
+    <div class="d-flex justify-content-center h-100">
+        <div class="card">
+            <div class="card-header">
+                <h3>Sign In</h3>
+                <div class="d-flex justify-content-end social_icon">
+                    <span><i class="fab fa-facebook-square"></i></span>
+                    <span><i class="fab fa-google-plus-square"></i></span>
+                    <span><i class="fab fa-twitter-square"></i></span>
+                </div>
+            </div>
+            <div class="card-body">
+                <form method="post">
+                    {%csrf_token%}
+                    <div class="input-group form-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fas fa-user"></i></span>
+                        </div>
+                        <input type="email" class="form-control" placeholder="email" name="email">
+
+                    </div>
+                    <div class="input-group form-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fas fa-key"></i></span>
+                        </div>
+                        <input type="password" name="pass" class="form-control" placeholder="password">
+                    </div>
+                    <div class="row align-items-center remember">
+                        <input type="checkbox">Remember Me
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Login" class="btn float-right login_btn">
+                    </div>
+                </form>
+            </div>
+            <div class="card-footer">
+                <div class="d-flex justify-content-center links">
+                    Don't have an account?<a href="/register">Sign Up</a>
+                </div>
+                <div class="d-flex justify-content-center">
+                    <a href="#">Forgot your password?</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,80 @@
+*{
+    margin: 0%;
+    padding: 0%;
+
+}
+/*body{
+    background-color: black;
+}*/
+.setting{
+
+ width: 100%;
+ float: left;
+}
+.side_text{
+float: right;
+width: 40%;
+color : white;
+font-weight: bold;
+}
+.beauty{
+
+    color: yellow;
+    font-style: italic;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.nav_setting{
+
+    margin-left: 30px;
+}
+
+.boo{
+
+    color: white;
+}
+
+.boo:hover{
+
+    color: yellow;
+}
+
+.desc{
+
+    color: red;
+    text-transform: uppercase;
+    font-style : italic;
+    font-weight: bold;
+
+}
+@font-face {
+   font-family: myFirstFont;
+   src: url(sansation_light.woff);
+}
+
+* {
+   font-family: myFirstFont;
+}
+
+.head{
+  animation: blink 1s linear infinite;
+  animation-name: example;
+  animation-duration: 4s;
+  text-shadow: 2px 2px 4px #000000;
+
+}
+
+@keyframes example {
+  0%   {background-color:navy; left:0px; top:0px;}
+  25%  {background-color:gray; left:200px; top:0px;}
+  50%  {background-color:blue; left:200px; top:200px;}
+  75%  {background-color:green; left:0px; top:200px;}
+  100% {background-color:yellow; left:0px; top:0px;}
+}
+
+@keyframes blink{
+0%{opacity: 0;}
+50%{opacity: .5;}
+100%{opacity: 1;}
+}

@@ -1,0 +1,56 @@
+{%include 'navbar.html' %}
+{%load static%}
+ <!DOCTYPE html>
+ <html>
+ <head>
+   <title>DashBorad</title>
+   <style>
+     .back{
+    background-image: url("{% static 'img/dash.jpg' %}");
+    height: 100vh;
+    background-repeat: no-repeat;
+/*    opacity: 0.7
+*/   }
+
+    .mystyle:hover{
+      box-shadow: 0 0 20px 0;
+      color: red;
+        transform: translateY(-20px);
+    }
+
+    .bound{
+    border-top: 8px solid yellow;
+    border-radius: 5px;
+}
+   </style>
+ </head>
+ <body>
+
+  <div class="back">
+  <div class="container">
+ <h1 class="text-center" style="color: white;">Admin Controll </h1>
+ <div class="row">
+     <div class="col-sm-4 text-center mystyle"  style="margin-top: 50px">
+         <h2 style="color: blue" >{{new}}</h2>
+         <a href="#"><h4 style="color: white">New Appoiments</h4>
+            <hr class="bound"></a>
+     </div>
+
+     <div class="col-sm-4 text-center mystyle" style="margin-top: 50px">
+         <h2 style="color: blue">{{confrim}}</h2>
+         <a href="#"><h4 style="color: white">Confrim Appoiments</h4>
+            <hr class="bound"></a>
+     </div>
+
+     <div class="col-sm-4 text-center mystyle" style="margin-top: 50px">
+         <h2 style="color: blue">{{total}}</h2>
+         <a href="#"><h4 style="color: white">Cancel Appoiments</h4>
+            <hr class="bound"></a>
+     </div>
+ </div>
+                <h2 style="color:red; text-align: center; margin-top: 100px; font-weight: bold;">Copy Rights! Issue Project By Dark Side</h2>
+</div>
+  </div>
+
+ </body>
+ </html>

@@ -1,0 +1,49 @@
+{% include 'navbar.html'%}
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="{%static 'css/register.css'%}">
+    <title>register</title>
+    {% ifequal error_message "yes" %}
+    <script>
+      swal("Good job!", "SignUp Successfully", "success");
+    </script>
+    {%endifequal%}
+
+    {% ifequal error_message "no" %}
+    <script>
+      alert("SignUp No Successfully")
+    </script>
+    {%endifequal%}
+
+</head>
+<div class="back">
+<div class="container">
+    <h3 class="text-center pt-3">Status Assign</h3>
+    <hr>
+<form  method="post" class="mt-5">
+  {%csrf_token%}
+ <div class="form-group">
+    <label for="inputAddress">Email Id</label>
+    <input type="text" class="form-control" id="inputAddress" name="book" placeholder="example@.com..." value="{{book}}">
+ </div>
+
+ <div class="form-group">
+    <label for="exampleFormControlSelect1">Example select</label>
+    <select class="form-control" id="exampleFormControlSelect1" name="status">
+      <option value="">Select Assign status</option>
+      <option value="Accept">Accept</option>
+      <option value="Reject">Reject</option>
+    </select>
+  </div>
+
+<a href="/requestedUser"><button type="submit" class="btn btn-primary" >Update Status</button></a>
+</div>
+</form>
+
+</div>
+
+
+</html>
