@@ -22,11 +22,9 @@
   <thead style="color: black">
     <tr>
       <th scope="col">Image</th>
-      <th scope="col">Name</th>
-      <th scope="col">ID</th>
-      <th scope="col">Contact</th>
-      <th scope="col">Email Id</th>
-      <th scope="col">Gender</th>
+      <th scope="col">Service Name</th>
+      <th scope="col">Date</th>
+      <th scope="col">Time</th>
       <th scope="col">Status</th>
       <th scope="col">Action</th>
     </tr>
@@ -34,12 +32,10 @@
   <tbody>
     {% for views in user %}
     <tr>
-      <th scope="row">{{views.image}}</th>
-      <td>{{views.name}}</td>
-      <td>{{views.id}}</td>
-      <td>{{views.contact}}</td>
-      <td>{{views.email}}</td>
-      <td>{{views.gender}}</td>
+      <th scope="row">{{views.id}}</th>
+      <td>{{views.service}}</td>
+      <td>{{views.date1}}</td>
+      <td>{{views.time1}}</td>
       <td>{{views.status}}</td>
       <td><a href="{%url 'remove_allUser' views.id %}" onclick="return confirm(' Are You Sure? You want to Remove this Record from DataBase')" class="btn btn-danger">Remove</a></td>
     </tr>

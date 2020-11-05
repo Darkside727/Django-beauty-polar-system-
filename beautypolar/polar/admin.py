@@ -5,6 +5,6 @@ from .models import *
 admin.site.register(User_status),
 admin.site.register(registration),
 admin.site.register(Service),
-admin.site.register(Book_status),
-admin.site.register(Booking_paid),
+admin.site.register(BookStatus),
+admin.site.register(BookPaid),
 admin.site.register(Apponitment),

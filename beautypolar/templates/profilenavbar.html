@@ -1,7 +1,6 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <title>Bootstrap Example</title>
   <meta charset="utf-8">
@@ -52,75 +51,34 @@
 <nav class="navbar navbar-expand-sm bg-danger " >
   <div class="beauty"> Beauty Polar</div>
   <ul class="navbar-nav">
-
-  {%if request.user.is_staff%}
-    <li class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle boo"  data-toggle="dropdown" href="#">Services</a>
-      <div class="dropdown-menu">
-           <a class="dropdown-item" href="{%url 'Add_service' %}">Add Services</a>
-           <a class="dropdown-item" href="{%url 'view_Services' %}">View Services</a>
-      </div>
+  {%if request.user.is_authenticated%}
+  {%if request.user.username%}
+  {%if not request.user.is_staff%}
+    <li class="nav-item">
+      <a class="nav-link  boo" href="{%url 'home' %}">Home</a>
     </li>
 
-    <li class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle boo"  data-toggle="dropdown" href="#" >User</a>
-      <div class="dropdown-menu">
-           <a class="dropdown-item" href="{%url 'View_new_user' %}">Request User</a>
-           <a class="dropdown-item" href="{%url 'View_user' %}">All User</a>
-      </div>
+    <li class="nav-item ">
+      <a class="nav-link  boo"   href="{%url 'All_services' %}" >View Services</a>
     </li>
 
-    <li class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle boo"  data-toggle="dropdown" href="#" >Appoiments</a>
-      <div class="dropdown-menu">
-           <a class="dropdown-item" href="{%url 'View_new_appoiments'%}" >New Appoiment</a>
-           <a class="dropdown-item" href="{%url 'View_Confrim_Appointement'%}">Confrim Appoiment</a>
-           <a class="dropdown-item" href="{%url 'View_appoiment_all'%}">All Appoiment</a>
-      </div>
+    <li class="nav-item ">
+      <a class="nav-link  boo"   href="{%url 'View_appoiments' %}" >View My Appoitment</a>
+    </li>
+
+    <li class="nav-item ">
+      <a class="nav-link  boo"   href="{%url 'Book_appointment' %}" >Book Appoitment</a>
     </li>
 
     <li class="nav-item">
       <a class="nav-link boo" href="{% url 'logoutUser' %}">Logout</a>
     </li>
+
     <li class="nav-item">
-      <button type="button" class="btn btn-primary">Wellcome {{request.user.username}}</button>
+      <button type="button" class="btn btn-outline-dark"><span>{{request.user.username}}</span></button>
     </li>
   {%endif%}
-
-  <!-- End edmin Site -->
-
-    {% if not request.user.is_staff%}
-    <li class="nav-item nav_setting">
-      <a class="nav-link boo" href="/">Home</a>
-    </li>
-
-      <li class="nav-item">
-      <a class="nav-link boo" href="/contact">About</a>
-    </li>
-
-      <li class="nav-item">
-      <a class="nav-link boo" href="/contact">Contact</a>
-    </li>
-
-    <li class="nav-item">
-      <a class="nav-link boo" href="/login">User Login</a>
-    </li>
-
-    <li class="nav-item">
-      <a class="nav-link boo" href="/admin_login">Admin Login</a>
-    </li>
   {%endif%}
-
+  {%endif%}
   </ul>
-
-
-
-
-
-
 </nav>
-
-
-
-</body>
-</html>

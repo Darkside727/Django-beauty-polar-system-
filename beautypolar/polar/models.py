@@ -24,31 +24,33 @@ class registration(models.Model):
 class Service(models.Model):
     name = models.CharField(max_length=100, null = True)
     cost = models.IntegerField(null = True)
-    image = models.FileField(null = True)
+    image = models.FileField(upload_to='images')
+    decs = models.CharField(max_length=100, null=True)
 
     def __str__(self):
         return self.name
 
 
-class Book_status(models.Model):
-    status = models.CharField(max_length= 100, null = True)
+class BookStatus(models.Model):
+    status = models.CharField(max_length=100, null=True)
 
     def __str__(self):
         return self.status
 
-class Booking_paid(models.Model):
-    paid = models.CharField(max_length= 100, null=True)
+class BookPaid(models.Model):
+    paid = models.CharField(max_length=100, null=True)
 
     def __str__(self):
-        return self.status
+        return self.paid
 
 class Apponitment(models.Model):
-    service  = models.ForeignKey(Service, on_delete= models.CASCADE, null = True)
-    customer = models.ForeignKey(registration, on_delete = models.CASCADE, null = True)
-    status = models.ForeignKey(Book_status, on_delete=models.CASCADE, null = True)
-    paid = models.ForeignKey(Booking_paid, on_delete=models.CASCADE, null = True)
-    date1 = models.DateField(null = True)
-    time1 = models.TimeField(null= True)
+    service = models.ForeignKey(Service, on_delete=models.CASCADE, null=True)
+    customer = models.ForeignKey(registration, on_delete=models.CASCADE, null=True)
+    status = models.ForeignKey(BookStatus, on_delete=models.CASCADE, null=True)
+    paid = models.ForeignKey(BookPaid, on_delete=models.CASCADE, null=True)
+    date1 = models.DateField(null=True)
+    time1 = models.TimeField(null=True)
 
     def __str__(self):
-        return self.registration.name
+        return self.customer.user.username+" "+self.service.name
+

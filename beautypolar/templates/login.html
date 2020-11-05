@@ -22,7 +22,8 @@
     </style>
      {% ifequal error_message "yes" %}
     <script>
-      swal("Good job!", "Login Successfully", "success");
+      alert("Good")
+       window.location = ('{%url "profile" %}')
     </script>
     {%endifequal%}
 
@@ -32,7 +33,7 @@
     </script>
     {%endifequal%}
 
-    {% ifequal error_message "no" %}
+    {% ifequal error_message "not" %}
     <script>
       alert("No login")
     </script>

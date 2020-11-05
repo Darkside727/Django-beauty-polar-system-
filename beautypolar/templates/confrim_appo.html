@@ -1,0 +1,48 @@
+{%include 'navbar.html'%}
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+<style>
+  .foo{
+    background-image: url("{% static 'img/infu1.jpg' %}");
+    height: 100vh;
+    background-repeat: no-repeat;
+/*    opacity: 0.7
+*/   }
+
+</style>
+</head>
+<body>
+<div class="foo">
+<div class="container">
+    <h2 class="text-center " style="text-transform: uppercase; font-size: 30px; font-weight: bold; color: white"> Requested User </h2>
+    <br>
+<table class="table"  id="example" >
+  <thead style="color: white">
+    <tr>
+      <th scope="col">Customer</th>
+      <th scope="col">Service</th>
+      <th scope="col">Appointment Date</th>
+      <th scope="col">Appointment Time</th>
+      <th scope="col">Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for views in user %}
+    <tr>
+      <td>{{views.customer}}</td>
+      <td>{{views.service}}</td>
+      <td>{{views.date1}}</td>
+      <td>{{views.time1}}</td>
+      <td>{{views.status}}</td>
+</td>
+    </tr>
+    {%endfor%}
+  </tbody>
+</table>
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,42 @@
+{%include 'profilenavbar.html' %}
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+</head>
+<body>
+
+  <h3 style="text-align: center; margin-top: 10px; font-style: italic; color : red; font-size: 40px; font-weight:bold;">
+  User Profile</h3>
+<div class="container text-center mt-5">
+  <table class="table">
+  <tbody>
+
+    <tr>
+      <td style="font-weight: bold;">First Name</td>
+      <td style="color: red; font-size:20px">{{pro.user.first_name}}</td>
+    </tr>
+    <tr>
+      <td style="font-weight: bold;">Last Name</td>
+      <td style="color: red; font-size:20px">{{pro.user.last_name}}</td>
+    </tr>
+    <tr>
+      <td style="font-weight: bold;">Email</td>
+      <td style="color: red; font-size:20px">{{pro.user.username}}</td>
+    </tr>
+     <tr>
+      <td style="font-weight: bold;">Contact</td>
+      <td style="color: red; font-size:20px">{{pro.contact}}</td>
+    </tr>
+    <tr>
+      <td style="font-weight: bold;">Gender</td>
+      <td style="color: red; font-size:20px">{{pro.gender}}</td>
+    </tr>
+
+  </tbody>
+</table>
+<a href="{%url 'Edit_profile'%}"><button type="button" class=" btn btn-outline-warning btn-lg btn-block"><span style="color: blue">Edit Profile</span></button></a>
+
+</div>
+</body>
+</html>

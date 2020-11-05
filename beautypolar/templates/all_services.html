@@ -1,0 +1,63 @@
+{%include 'profilenavbar.html' %}
+{%load static%}
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <style>
+        .foo{
+          margin-right: 15px;
+          box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+          transition: 0.3s;
+        }
+        .foo1{
+            text-align: center;
+            font-weight: bold;
+            font-style: italic;
+        }
+
+        .foo2{
+
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <h2 class="text-center" style="color: red; font-style: italic;"> All Services</h2>
+
+        <div class="row mt-3">
+
+          <div class="col-md-12">
+
+            <div class="card-columns">
+
+              {% for x in pro%}
+
+               <div class="card foo">
+                    <img src="/media/{{x.image}}  " class="card-img-top" alt="..." onclick="modelImage('{{i.image}}')">
+                <div class="card-body">
+                    <h5 class="card-title foo1">{{x.name}}</h5>
+                    <p class="card-text foo1 foo2">Cost: Rs{{x.cost}}</p>
+                    <p class="card-text foo1 " style="margin-top: 40px;"><a href="{%url 'book_selected_appoitment' x.id %}"><button class="btn btn-outline-danger">Book Appoinment</button></a></p>
+                    <p class="card-text foo1" style="margin-top: 30px">{{x.decs}}</p>
+                </div>
+               </div>
+
+              {%endfor%}
+
+            </div>
+
+          </div>
+
+        </div>
+
+       </div>
+
+    </div>
+
+</div>
+
+ </body>
+</html>
